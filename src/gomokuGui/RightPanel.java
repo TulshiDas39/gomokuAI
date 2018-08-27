@@ -50,12 +50,11 @@ public class RightPanel extends JPanel {
 	}
 	
 	public void addWinGIF() throws MalformedURLException {
-		
-		URL url = new URL("file:///C:/Users/Tulshi%20Das/Google%20Drive/Programspace/gomokuGui2/congrats.gif");
-        Icon icon = new ImageIcon(url);
-        labelGIF = new JLabel(icon);
-        /*labelGIF.setVisible(false);*/
-        add(labelGIF);
+		String  path= System.getProperty("user.dir");
+		URL url = new URL("file:///"+path+"/congrats.gif");
+        	Icon icon = new ImageIcon(url);
+        	labelGIF = new JLabel(icon);
+		add(labelGIF);
         
 	}
 	
@@ -65,11 +64,12 @@ public class RightPanel extends JPanel {
 	}*/
 	
 	public void addLoseGIF() throws MalformedURLException{
-		URL url = new URL("file:///C:/Users/Tulshi%20Das/Google%20Drive/Programspace/gomokuGui2/game_over.gif");
-        Icon icon = new ImageIcon(url);
-        labelGIF = new JLabel(icon);
-        labelGIF.setPreferredSize(new Dimension(getWidth(), 50));
-        add(labelGIF);
+		 String  path= System.getProperty("user.dir");
+		URL url = new URL("file:///"+path+"/game_over.gif");
+		Icon icon = new ImageIcon(url);
+		labelGIF = new JLabel(icon);
+		labelGIF.setPreferredSize(new Dimension(getWidth(), 50));
+		add(labelGIF);
 	}
 	
 
