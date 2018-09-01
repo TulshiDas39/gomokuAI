@@ -4,3 +4,5 @@
 #download zip and extract, then move the project folder(gomokuAI) to your working directory. run the Main.java file. Thats all.
 #If you are happy please give me a star.
 #Thanks.
+
+Thanks to Uddip Acharjee for making a beutiful User Interface and Maloy Kanti Sarkar for making a strong evaluation function and bug fixing
