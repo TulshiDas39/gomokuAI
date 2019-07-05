@@ -1,7 +1,6 @@
 package gomokuGui;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,15 +8,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.TreeMap;
-
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class DrawingPanel extends JPanel implements ActionListener{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int board[][];
 	int humanturnx[]=new int[100];
 	int humanturny[]=new int[100];
@@ -72,7 +71,6 @@ public class DrawingPanel extends JPanel implements ActionListener{
 			int row=e.getY()/62;
 			int col=e.getX()/62;
 			
-			boolean win=false;
 			int count=0;
 			if(board[row][col]==0) {
 				if(turn==1) {
@@ -90,12 +88,7 @@ public class DrawingPanel extends JPanel implements ActionListener{
 					/*int winTurn=0;*/
 					if(gomuku.check(turn)) {
 						rPanel.viewWinner("You Win");
-						try {
 							rPanel.addWinGIF();
-						} catch (MalformedURLException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
 						turn=3;
 						
 					}
@@ -164,25 +157,14 @@ public class DrawingPanel extends JPanel implements ActionListener{
 			if(gomuku.check(turn)) {
 				rPanel.changeTurn(move.row,move.col,true);
 				rPanel.viewWinner("Computer Win");
-				/*rPanel.viewCongrats();*/
-				try {
-					rPanel.addLoseGIF();
-				} catch (MalformedURLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				rPanel.addLoseGIF();
 				turn=3;
 				/*repaint();*/
 			}
 			else if(winTurn == 3){
 				rPanel.changeTurn(move.row,move.col,true);
 				rPanel.viewWinner("Match Drawn!!!");
-				try {
-					rPanel.addLoseGIF();
-				} catch (MalformedURLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				rPanel.addLoseGIF();
 			}
 			else{ /*if(winTurn==0)s*/
 				rPanel.changeTurn(move.row, move.col,false);

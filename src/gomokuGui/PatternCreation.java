@@ -1,6 +1,5 @@
 package gomokuGui;
 
-import java.awt.List;
 import java.util.ArrayList;
 
 public class PatternCreation {
@@ -46,8 +45,6 @@ public class PatternCreation {
 	}
 
 	private ArrayList<Move> getMovesForPlayer(ArrayList<Pattern> patternList, int posx, int posy, int playerIndex) {
-		// TODO Auto-generated method stub
-		GomukuAI gm = new GomukuAI();
 		ArrayList<Move> threatMoves = new ArrayList<>();
 
 		for (int i = 0; i < 4; i++) {

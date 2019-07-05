@@ -4,7 +4,6 @@ public class Pattern {
 
 	private int[][]pattern;
 	private int[]solutions;
-	private GomukuAI gm;
 	/*private int[][][][] board;*/
 	public Pattern(int []pattern,int[] solutions)
 	{
